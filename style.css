@@ -1,18 +1,22 @@
 body {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    height: 100%;
 }
 
 /* Navigation Bar */
+/* nav {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+} */
 
 #home {
     background-color: #7600bc;
-    padding-bottom: 1cm;
     margin-left: -1cm;
     margin-right: -1cm;
-    margin-top: -1cm;
     padding-top: 2cm;
-    padding-bottom: 3cm;
-    height: 15mm;
+    height: 260px;
     margin-bottom: 40px;
 }
 
@@ -49,7 +53,6 @@ body {
 
 .profile_name {
     float: left;
-    padding-left: 2cm;
     /* Add the styles here */
     color: white;
     font-size: 25px;
@@ -60,6 +63,7 @@ body {
     margin-left: -1px;
     margin-right: -1px;
 }
+
 .profile_name .contact_info {
     font-size: 11px;
     font-style: italic;
@@ -99,17 +103,18 @@ h2 {
     position: relative;
 }
 
-/* Used in the Objective section */
+/* Objectives */
 
 .container {
     display: flex;
+    padding-left: 120px;
 }
 
 #objective h1 {
     font-size: 65px;
-    margin-top: 100px;
+    margin-top: 70px;
     color: #7600bc;
-    /* text-shadow: 2px 2px color #4c4a4a; */
+    margin-left: 108px;
 }
 
 #objective p {
@@ -117,15 +122,62 @@ h2 {
     color: rgb(14, 13, 13);
     margin-top: -1cm;
     padding-right: 100px;
+    margin-left: 108px;
+    margin-right: 100px;
 }
 
 .profile_image {
-    width: 355px;
+    width: 440px;
     height: fit-content;
     vertical-align: middle;
-    margin: 25px;
-    padding-left: 100px;
-    padding-right: 50px;
+    margin-left: 55px;
+    padding-right: 20px;
+}
+
+div {
+    width: auto;
+    margin-left: 100px;
+}
+
+* {
+    box-sizing: border-box
+}
+
+/* img_container needed to position the overlay. Adjust the width as needed */
+.img_container {
+    position: relative;
+    width: 50%;
+    max-width: 400px;
+}
+
+/* Make the image to responsive */
+.image {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* The overlay effect - lays on top of the container and over the image */
+.overlay {
+    position: absolute;
+    bottom: 0;
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.5);
+    /* Black see-through */
+    color: #f1f1f1;
+    width: 100%;
+    transition: .5s ease;
+    opacity: 0;
+    color: white;
+    font-size: 20px;
+    padding: 20px;
+    margin-left: 65px;
+    text-align: center;
+}
+
+/* When you mouse over the container, fade in the overlay title */
+.img_container:hover .overlay {
+    opacity: 1;
 }
 
 /* Qualifications */
@@ -141,14 +193,20 @@ h2 {
     color: lightgray;
     display: block;
     border-radius: 15px;
-    text-align:unset;
-    margin: 50px 50px 50px 100px;
-    padding: 15px;
+    text-align: unset;
+    margin: 50px 80px 50px 80px;
+    padding: 11px 25px 15px 30px;
     width: 3.2in;
     font-size: 18px;
     box-shadow: 0 10px 15px rgb(102, 102, 102);
     background-color: rgb(32, 32, 130);
     font-weight: normal;
+    transition: 2s;
+}
+
+.qualifications:hover {
+    width: 3.6in;
+    background: rgb(60, 51, 228);
 }
 
 hr {
@@ -156,16 +214,28 @@ hr {
     margin-right: 35px;
 }
 
+/* Professional Experience */
 .professional_experience {
     box-shadow: 0 10px 15px rgb(102, 102, 102);
-    background-color: lightgray;
+    background-color: rgb(243, 240, 240);
     font-weight: normal;
-    padding: 15px;
+    font-size: 18px;
+    padding: 30px;
     padding-bottom: 35px;
     width: 13in;
     border-radius: 15px;
     margin-top: 50px;
+    margin-left: 180px;
+    transition: all 1.5s;
 }
+
+.professional_experience:hover {
+    transform: translateY(27px);
+    background:  rgb(250, 210, 163);
+    font-size: 19px;
+    width: 12.9in;
+}
+
 
 .professional_experience h6 {
     align-items: center;
@@ -173,7 +243,7 @@ hr {
     margin-block-start: 8px;
     margin-block-end: 5px;
     font-weight: bold;
-    
+
 }
 
 .professional_experience p {
@@ -184,7 +254,7 @@ hr {
     margin-block-end: 5px;
 }
 
-.professional_experience_text  {
+.professional_experience_text {
     align-items: center;
     font-size: 18px;
     color: rgb(61, 61, 61);
@@ -198,10 +268,20 @@ hr {
     justify-content: center;
 }
 
-/* Professional Experience */
-.professional_experience {
-    font-size: 18px;
-    margin-left: 3cm;
+/* Education */
+.bg {
+    background-image: url("./html_finalprojimages/campus-spring.jpg");
+    width: 13in;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 15px;
+    color: rgb(9, 9, 9);
+    height: 480px;
+    padding-bottom: 5px;
+    box-shadow: 0 10px 15px rgb(102, 102, 102);
+    margin-top: 40px;
+    margin-left: 180px;
 }
 
 .education-container {
@@ -209,24 +289,20 @@ hr {
     margin-left: 60px;
 }
 
-.education-container hr {
-    border: 1px solid lightgray;
-    width: 75%;
-    margin-left: 5cm;
+.education-card {
+    margin: 0px 10px 10px 10px;
+    background-color: rgba(32, 32, 130, 0.326);
+    padding: 50px;
+    width: 11.6in;
+    border-radius: 15px;
+    color: rgb(247, 249, 248);
+    transition: all 1.5s;
 }
 
-.education-card {
-    margin: 0 15px 15px 60px;
-    padding-bottom: 5px;
-    box-shadow: 0 10px 15px rgb(102, 102, 102);
-    background-color: rgb(32, 32, 130);
-    padding: 15px;
-    padding-bottom: 35px;
-    width: 13in;
-    border-radius: 15px;
-    margin-top: 50px;
-    color: lightgray ;
-
+.education-card:hover {
+    transform: translateY(27px);
+    font-size: 19.5px;
+    width: 11.5in;
 }
 
 .education-card h3 {
@@ -237,12 +313,21 @@ hr {
 .education-card li {
     font-size: 18px;
     margin-left: 30px;
-    font-weight:lighter;
+    font-weight: lighter;
 }
+
+
+/* Copy right */
+#copy_right {
+    font-size: 11px;
+}
+
+
+
 
 /* Comments */
 
-.all_comments {
+/* .all_comments {
     display: flex;
     align-items: center;
     margin-left: 1in;
@@ -274,7 +359,7 @@ hr {
     color: #7600bc;
     font-size: 20px;
     font-family: 'Times New Roman', Times, serif;
-}
+} */
 
 /* Scroll to Top Button */
 
@@ -282,7 +367,7 @@ hr {
     width: 48px;
     height: 48px;
     border-radius: 100%;
-    background-color: #7600bc;
+    background-color: green;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -290,11 +375,19 @@ hr {
     right: 3%;
     bottom: 3%;
     cursor: pointer;
+    transition: width 1.2s, height 1.2s, transform 1.2s;
+}
+
+.iconbutton:hover {
+    width: 60px;
+    height: 60px;
+    transform: rotate(360deg);
+    background: rgb(32, 32, 130);
 }
 
 /* Form Pop-up */
 
-.popup {
+/* .popup {
     width: 400px;
     background-color: #7600bc;
     color: lightgray;
@@ -305,7 +398,6 @@ hr {
     transform: translate(-50%, -50%);
     text-align: center;
     position: fixed;
-    /* padding: 30px; */
     visibility: hidden;
 }
 
@@ -336,11 +428,11 @@ hr {
     text-align: center;
     cursor: pointer;
     margin-left: 25%;
-}
+} */
 
 /* Comment Form */
 
-input,
+/* input,
 textarea {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     margin: 10px;
@@ -356,11 +448,11 @@ fieldset {
     margin-right: 50px;
     border: thin solid white;
     width: 50%;
-}
+} */
 
 /* Buttons */
 
-button {
+/* button {
     background-color: #fff;
     border: 1px solid #7600bc;
     color: #7600bc;
@@ -381,4 +473,4 @@ button:hover {
     border-radius: 6px;
     text-align: center;
     cursor: pointer;
-}
+} */
