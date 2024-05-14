@@ -32,7 +32,9 @@ body {
     padding: 20px;
     font-size: 20px;
     text-decoration: none;
-    float: right;
+    display:inline-flex;
+    align-content: center;
+    justify-content: center;
 }
 
 .topmenu:hover {
@@ -351,7 +353,7 @@ hr {
 }
 
 /* Footer */
-#footer {
+footer {
     margin-left: 60px;
 
 }
